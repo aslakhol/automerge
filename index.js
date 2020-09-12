@@ -20,14 +20,19 @@ try {
 
   const octokit = github.getOctokit(repoToken);
 
-  octokit.graphql(
-    `
+  octokit
+    .graphql(
+      `
       mutation {
         mergePullRequest(input: {pullRequestId: ${pr_id}}) {
           clientMutationId
         }
     `
-  );
+    )
+    .catch((err) => {
+      core.error(err);
+      core.setFailed(err.message);
+    });
 } catch (error) {
   core.setFailed(error.message);
 }
