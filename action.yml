@@ -1,0 +1,5 @@
+name: "Automerge"
+description: "Automerge any PRs opened"
+runs:
+  using: "node12"
+  main: "index.js"
