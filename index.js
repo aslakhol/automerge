@@ -16,9 +16,9 @@ try {
 
   // console.log(github.context.payload);
 
-  const myToken = core.getInput("myToken");
+  const repoToken = core.getInput("repo-token");
 
-  const octokit = github.getOctokit(myToken);
+  const octokit = github.getOctokit(repoToken);
 
   octokit.graphql(
     `
