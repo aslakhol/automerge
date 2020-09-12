@@ -16,6 +16,10 @@ try {
 
   // console.log(github.context.payload);
 
+  const myToken = core.getInput("myToken");
+
+  const octokit = github.getOctokit(myToken);
+
   octokit.graphql(
     `
       mutation {
