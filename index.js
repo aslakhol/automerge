@@ -14,7 +14,16 @@ try {
   console.log(`head: ${head}`);
   console.log(`base: ${base}`);
 
-  console.log(github.context.payload);
+  // console.log(github.context.payload);
+
+  octokit.graphql(
+    `
+      mutation {
+        mergePullRequest(input: {pullRequestId: ${pr_id}}) {
+          clientMutationId
+        }
+    `
+  );
 } catch (error) {
   core.setFailed(error.message);
 }
