@@ -6,9 +6,11 @@ try {
   const pullRequest = github.context.payload["pull_request"];
   const base = pullRequest.base.ref;
   const head = pullRequest.head.ref;
-  const id = github.context.payload["repository"].node_id;
+  const repo_id = github.context.payload["repository"].node_id;
+  const pr_id = pullRequest.node_id;
 
-  console.log(`id: ${id}`);
+  console.log(`repo id: ${repo_id}`);
+  console.log(`pr id: ${pr_id}`);
   console.log(`head: ${head}`);
   console.log(`base: ${base}`);
 
