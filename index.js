@@ -14,7 +14,7 @@ try {
     .graphql(
       `
       mutation {
-        mergePullRequest(input: {pullRequestId: ${pr_id}}) {
+        mergePullRequest(input: {pullRequestId: "${pr_id}"}) {
           clientMutationId
         }
       }
