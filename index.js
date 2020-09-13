@@ -6,6 +6,7 @@ try {
   const octokit = github.getOctokit(repoToken);
   const pullRequest = github.context.payload["pull_request"];
   const pr_id = pullRequest.node_id;
+  const ref_id = pullRequest.ref_id;
 
   octokit
     .graphql(
@@ -14,6 +15,7 @@ try {
         mergePullRequest(input: {pullRequestId: "${pr_id}"}) {
           clientMutationId
         }
+        deleteRef(input: {refId: "${ref_id}"})
       }
     `
     )
