@@ -8,6 +8,9 @@ try {
   const pr_id = pullRequest.node_id;
   const ref_id = pullRequest.ref_id;
 
+  console.log(ref_id);
+  console.log(pullRequest);
+
   octokit
     .graphql(
       `
