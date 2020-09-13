@@ -1,5 +1,8 @@
 name: "Automerge"
 description: "Automerge any PRs opened"
+inputs:
+  repo-token:
+    description: "Token with permissions to do repo things"
 runs:
   using: "node12"
   main: "index.js"
