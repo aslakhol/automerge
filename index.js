@@ -17,6 +17,7 @@ try {
         mergePullRequest(input: {pullRequestId: ${pr_id}}) {
           clientMutationId
         }
+      }
     `
     )
     .catch((err) => {
